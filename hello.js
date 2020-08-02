@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
   res.send('Hello World from GCE!');
 });
 
-// Comment that is random for updates
+// Comment that is random for updates (one more time)
 app.listen(PORT, function() {
   console.log(`Updated example app listening on port ${PORT}!`);
 });
