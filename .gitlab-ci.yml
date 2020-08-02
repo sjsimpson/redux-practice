@@ -1,5 +1,3 @@
-image: node:latest
-
 before_script:
   - apt-get update -qq
   - apt-get install -qq git
@@ -16,6 +14,6 @@ deploy_staging:
     name: staging
     url: piratesonthemoon.com
   script:
-    - ssh gitlab@35.208.60.197 "cd var/www/ && git checkout master && git pull origin master && exit"
+    - ssh gitlab@35.208.60.197 "cd app/ && git checkout master && git pull origin master && exit"
   only:
     - master
