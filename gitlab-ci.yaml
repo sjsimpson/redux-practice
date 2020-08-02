@@ -14,6 +14,6 @@ deploy_staging:
     name: staging
     url: piratesonthemoon.com
   script:
-    - ssh gitlab@35.208.60.197 "cd var/www/ && git checkout master && git pull origin initial-setup/dev && exit"
+    - ssh gitlab@35.208.60.197 "cd var/www/ && git checkout master && git pull origin master && exit"
   only:
-    - initial-setup/dev
+    - master
