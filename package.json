@@ -1,0 +1,23 @@
+{
+  "name": "anti-cheat-front-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node hello.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/pirates-on-the-moon/anti-cheat-front-end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/pirates-on-the-moon/anti-cheat-front-end/issues"
+  },
+  "homepage": "https://gitlab.com/pirates-on-the-moon/anti-cheat-front-end#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
