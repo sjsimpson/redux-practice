@@ -4,8 +4,8 @@ steps:
   args: [ build, -t, gcr.io/$PROJECT_ID/test-express-app, . ]
 
 # used to update VM instance group (rolling)
-- name: gcr.io/cloud-builders/gcloud
-  args: [ compute, instance-groups, managed, rolling-action, restart, <instance-group-name>, --zone=<zone> ]
+# - name: gcr.io/cloud-builders/gcloud
+#   args: [ compute, instance-groups, managed, rolling-action, restart, <instance-group-name>, --zone=<zone> ]
 
 images:
 - gcr.io/$PROJECT_ID/test-express-app
