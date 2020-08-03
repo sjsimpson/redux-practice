@@ -8,5 +8,5 @@ RUN npm install
 
 # Copy entire app over to Docker image
 COPY . ./
-EXPOSE 8080
+EXPOSE 80
 CMD ["npm", "start"]
