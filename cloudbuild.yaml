@@ -7,5 +7,10 @@ steps:
 # - name: gcr.io/cloud-builders/gcloud
 #   args: [ compute, instance-groups, managed, rolling-action, restart, <instance-group-name>, --zone=<zone> ]
 
+# update single VM instance
+- name: gcr.io/cloud-builders/gcloud
+  args: [ compute, instances, reset, instance-template-1 ]
+
+
 images:
 - gcr.io/$PROJECT_ID/test-express-app

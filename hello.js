@@ -4,7 +4,7 @@ var app = express();
 const PORT = 80;
 
 app.get('/', function (req, res) {
-  res.send('Hello World from GCE!');
+  res.send('Hello World from GCE! Updated using pipeline');
 });
 
 // Comment that is random for updates (one more time)
