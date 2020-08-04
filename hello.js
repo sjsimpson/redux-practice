@@ -4,7 +4,7 @@ var app = express();
 const PORT = 80;
 
 app.get('/', function (req, res) {
-  res.send('Hello World from GCE! Updated using pipeline, and setting gcloud credentials');
+  res.send('Hello World from GCE! Updated using pipeline, and setting gcloud credentials. Luke, I am your Father.');
 });
 
 // Comment that is random for updates (one more time)
