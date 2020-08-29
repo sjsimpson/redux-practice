@@ -10,12 +10,12 @@ updating to see that pushing works
 
 
 # TO DO
-- [>] Set up React App
+- [X] Set up React App
 - [X] Figure out TypeScript, Babel, and Webpack
-- [ ] Setup TypeScript with React elements
-- [ ] Setup TypeScript with Redux
-- [ ] Deploy React App on Docker
-- [ ] Setup Dev, Staging, and Prod environments
-  - [ ] Setup cloudbuild.yaml files for each stage
+- [X] Setup TypeScript with React elements
+- [X] Setup TypeScript with Redux
+- [X] Deploy React App on Docker
+- [>] Setup Dev, Staging, and Prod environments
+  - [>] Setup cloudbuild.yaml files for each stage
   - [ ] Setup instances that pull dev, staging, and prod environments
   - [ ] Setup instance groups for each and figure out how to map them to a static IP
