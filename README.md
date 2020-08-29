@@ -1,15 +1,19 @@
+## Mirrored project from GitLab
+
 this project is mirrored in GCP source repository to leverage google CI/CD
 
 updating to see that pushing works
 
-# Installing proper TypeScript, Webpack, React and Babel dependencies
-# They are all listed in package.json
+another update of yaml
+
+#### Installing proper TypeScript, Webpack, React and Babel dependencies
+#### They are all listed in package.json
 
 `yarn add --dev typescript`
 `yarn add --dev @types/react @types/react-dom @types/react-redux`
 
 
-# TO DO
+## TO DO
 - [X] Set up React App
 - [X] Figure out TypeScript, Babel, and Webpack
 - [X] Setup TypeScript with React elements
