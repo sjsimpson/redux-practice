@@ -1,7 +1,7 @@
 steps:
 # building app and storing in gcp registry
 - name: gcr.io/cloud-builders/docker
-  args: [ build, -t, gcr.io/$PROJECT_ID/$BRANCH_NAME, . ]
+  args: [ build, -t, gcr.io/$PROJECT_ID/$REPO_NAME-$BRANCH_NAME, . ]
 
 # used to update VM instance group (rolling)
 # - name: gcr.io/cloud-builders/gcloud
@@ -13,4 +13,4 @@ steps:
 
 
 images:
-- gcr.io/$PROJECT_ID/$BRANCH_NAME
+- gcr.io/$PROJECT_ID/$REPO_NAME-$BRANCH_NAME
