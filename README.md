@@ -8,8 +8,10 @@ updating to see that pushing works
 `yarn add --dev typescript`
 `yarn add --dev @types/react @types/react-dom @types/react-redux`
 
+# UPDATE
+### Refactoring to use AWS instead of GCP
 
-# TO DO
+## TO DO
 - [X] Set up React App
 - [X] Figure out TypeScript, Babel, and Webpack
 - [X] Setup TypeScript with React elements

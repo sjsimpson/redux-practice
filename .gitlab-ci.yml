@@ -1,22 +1,14 @@
 stages:
-  - test
   - build
-  - deploy
 
-test:
-  stage: test
-  script: echo "Running tests"
-
-build:
+docker-build:
+  # Official docker image.
+  image: docker:latest
   stage: build
-  script: echo "Building the app"
-
-deploy_staging:
-  stage: deploy
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
-    - echo "Deploy to staging server"
-  environment:
-    name: staging
-    url: https://staging.example.com
-  only:
-    - master
+    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+    - docker push "$CI_REGISTRY_IMAGE"
