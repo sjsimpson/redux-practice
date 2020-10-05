@@ -1,16 +1,15 @@
 steps:
 # building app and storing in gcp registry
 - name: gcr.io/cloud-builders/docker
-  args: [ build, -t, gcr.io/$PROJECT_ID/$REPO_NAME-$BRANCH_NAME, . ]
+  args: [ build, -t, gcr.io/$PROJECT_ID/front-end-prod, . ]
 
 # used to update VM instance group (rolling)
 # - name: gcr.io/cloud-builders/gcloud
 #   args: [ compute, instance-groups, managed, rolling-action, restart, <instance-group-name>, --zone=<zone> ]
 
 # update single VM instance
-- name: gcr.io/cloud-builders/gcloud
-  args: [ compute, instances, reset, instance-template-1, --zone=us-central1-a ]
-
+# - name: gcr.io/cloud-builders/gcloud
+#   args: [ compute, instances, reset, instance-template-1, --zone=us-central1-a ]
 
 images:
-- gcr.io/$PROJECT_ID/$REPO_NAME-$BRANCH_NAME
+- gcr.io/$PROJECT_ID/front-end-prod
