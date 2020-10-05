@@ -22,7 +22,7 @@ gcp-build:
     - echo $GCP_SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
     - export GCR_TAG=gcr.io/$CI_PROJECT_NAME
     - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
-    - gcloud builds submit --config ".gcp-build-master.yaml" --project $PROJECT_ID
+    - gcloud builds submit --config ".gcp-build-master.yaml" --project=$PROJECT_ID
 
 gcp-deploy:
   image: google/cloud-sdk:alpine
@@ -33,4 +33,4 @@ gcp-deploy:
     - echo $GCP_SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
     - export GCR_TAG=gcr.io/$CI_PROJECT_NAME
     - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
-    - gcloud --quiet --project $PROJECT_ID compute instances reset instance-1
+    - gcloud --quiet --project $PROJECT_ID compute instances reset instance-1 --zone=us-central1-a
