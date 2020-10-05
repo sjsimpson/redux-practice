@@ -22,7 +22,7 @@ gcp-build:
     - echo $GCP_SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
     - export GCR_TAG=gcr.io/$CI_PROJECT_NAME
     - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
-    - gcloud builds submit --config ".gcp-build-master.yaml" --tag "gcr.io/$PROJECT_ID/front-end-prod" --project $PROJECT_ID
+    - gcloud builds submit --config ".gcp-build-master.yaml" --project $PROJECT_ID
 
 gcp-deploy:
   image: google/cloud-sdk:alpine
