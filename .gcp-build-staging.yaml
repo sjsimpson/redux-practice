@@ -1,0 +1,7 @@
+steps:
+# building app and storing in gcp registry
+- name: gcr.io/cloud-builders/docker
+  args: [ build, -t, gcr.io/$PROJECT_ID/front-end-staging, . ]
+
+images:
+- gcr.io/$PROJECT_ID/front-end-staging
