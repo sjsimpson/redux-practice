@@ -1,9 +1,9 @@
 stages:
   - build
+  - deploy
 
 docker-build:
-  # Official docker image.
-  image: docker:latest
+  image: docker:latest # Official docker image
   stage: build
   services:
     - docker:dind
@@ -12,3 +12,14 @@ docker-build:
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
     - docker push "$CI_REGISTRY_IMAGE"
+
+gcp-deploy:
+  image: google/cloud-sdk:alpine
+  stage: deploy
+  environment: Production
+  only:
+    - master
+  script:
+    - echo $GCP_SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
+    - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+    - gcloud --quiet --project $PROJECT_ID compute instances create-with-container --container-image registry.gitlab.com/pirates-on-the-moon/anti-cheat-front-end
