@@ -2,6 +2,7 @@ stages:
   - build
   - deploy
 
+# Staging
 gcp-build-staging:
   image: google/cloud-sdk:alpine
   stage: build
@@ -24,6 +25,7 @@ gcp-deploy-staging:
     - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
     - gcloud --quiet --project $PROJECT_ID compute instances reset front-end-staging --zone=us-central1-a
 
+# Production
 gcp-build-prod:
   image: google/cloud-sdk:alpine
   stage: build
