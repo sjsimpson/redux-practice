@@ -10,7 +10,7 @@ import { history } from "../store/history";
 export const App = () => (
   <ConnectedRouter history={history}>
     <Router history={history}>
-      <h1>Hello World! Staging!!</h1>
+      <h1>Hello World! Staging!! Updated from MR!</h1>
       <div>
         <Link to="/connect-counter">ConnectCounter</Link>
       </div>
